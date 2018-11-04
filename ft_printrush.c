@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printrush.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: creicher <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wclayton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/03 14:55:42 by creicher          #+#    #+#             */
-/*   Updated: 2018/11/04 07:02:19 by wclayton         ###   ########.fr       */
+/*   Created: 2018/11/04 04:30:24 by wclayton          #+#    #+#             */
+/*   Updated: 2018/11/04 08:01:28 by wclayton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rush.h"
 
-int	main(void)
+void	ft_printrush(int rushnum, t_unt x, t_unt y, int multi)
 {
-	int		ret;
-	t_stack	*s;
-	t_stack *beg;
-
-	s = (t_stack*)malloc(sizeof(t_stack));
-	if (s)
-	{
-		beg = s;
-		while ((ret = read(0, &s->data, 1)))
-		{
-			s->next = ft_create_elem();
-			s = s->next;
-		}
-		ft_check(beg);
-	}
-	return (0);
+	if (multi != 0)
+		ft_putstr(" || ");
+	ft_putstr("[rush-0");
+	ft_putnbr(rushnum);
+	ft_putstr("] [");
+	ft_putnbr(x);
+	ft_putstr("] [");
+	ft_putnbr(y);
+	ft_putstr("]");
 }

@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_create_elem.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: creicher <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wclayton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/03 14:55:42 by creicher          #+#    #+#             */
-/*   Updated: 2018/11/04 07:02:19 by wclayton         ###   ########.fr       */
+/*   Created: 2018/10/30 19:44:53 by wclayton          #+#    #+#             */
+/*   Updated: 2018/11/04 06:09:50 by wclayton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rush.h"
 
-int	main(void)
+t_stack	*ft_create_elem(void)
 {
-	int		ret;
-	t_stack	*s;
-	t_stack *beg;
+	t_stack *nel;
 
-	s = (t_stack*)malloc(sizeof(t_stack));
-	if (s)
-	{
-		beg = s;
-		while ((ret = read(0, &s->data, 1)))
-		{
-			s->next = ft_create_elem();
-			s = s->next;
-		}
-		ft_check(beg);
-	}
-	return (0);
+	nel = (t_stack*)malloc(sizeof(t_stack));
+	if (nel)
+		nel->next = NULL;
+	return (nel);
 }

@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putcharstr.c                                    :+:      :+:    :+:   */
+/*   ft_fict.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: creicher <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wclayton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/03 15:01:01 by creicher          #+#    #+#             */
-/*   Updated: 2018/11/03 15:03:04 by creicher         ###   ########.fr       */
+/*   Created: 2018/11/04 07:40:24 by wclayton          #+#    #+#             */
+/*   Updated: 2018/11/04 07:52:41 by wclayton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_rush.h"
+#ifndef FT_FICT_H
+# define FT_FICT_H
 
-void	ft_putchar(char c)
+typedef struct		s_fict
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
+	t_unt			i;
+	t_unt			k;
+}					t_fict;
+#endif

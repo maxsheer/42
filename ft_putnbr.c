@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: creicher <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wclayton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/03 14:55:42 by creicher          #+#    #+#             */
-/*   Updated: 2018/11/04 07:02:19 by wclayton         ###   ########.fr       */
+/*   Created: 2018/10/22 18:32:01 by wclayton          #+#    #+#             */
+/*   Updated: 2018/11/04 07:26:26 by wclayton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rush.h"
 
-int	main(void)
+void	ft_putnbr(int nbr)
 {
-	int		ret;
-	t_stack	*s;
-	t_stack *beg;
+	unsigned int tmp;
 
-	s = (t_stack*)malloc(sizeof(t_stack));
-	if (s)
+	if (nbr < 0)
 	{
-		beg = s;
-		while ((ret = read(0, &s->data, 1)))
-		{
-			s->next = ft_create_elem();
-			s = s->next;
-		}
-		ft_check(beg);
+		tmp = -nbr;
+		ft_putchar('-');
 	}
-	return (0);
+	else
+		tmp = nbr;
+	if (tmp >= 10)
+		ft_putnbr(tmp / 10);
+	ft_putchar('0' + tmp % 10);
 }

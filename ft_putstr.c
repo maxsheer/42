@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: creicher <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wclayton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/03 14:55:42 by creicher          #+#    #+#             */
-/*   Updated: 2018/11/04 07:02:19 by wclayton         ###   ########.fr       */
+/*   Created: 2018/11/04 00:12:31 by wclayton          #+#    #+#             */
+/*   Updated: 2018/11/04 04:13:59 by wclayton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rush.h"
 
-int	main(void)
+void	ft_putstr(char *str)
 {
-	int		ret;
-	t_stack	*s;
-	t_stack *beg;
+	int i;
 
-	s = (t_stack*)malloc(sizeof(t_stack));
-	if (s)
+	i = 0;
+	while (str[i])
 	{
-		beg = s;
-		while ((ret = read(0, &s->data, 1)))
-		{
-			s->next = ft_create_elem();
-			s = s->next;
-		}
-		ft_check(beg);
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (0);
 }
